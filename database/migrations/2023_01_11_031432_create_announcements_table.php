@@ -14,14 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('announcements', function (Blueprint $table) {
+
             $table->id('anouncement_id');
             $table->string('header');
             $table->string('sub_header');
-            $table->foreignId('user_id')->constrainted();
-            $table->boolean('is_admin')->default(false);
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('description');
             $table->string('photo', 300);
             $table->timestamps();
+
         });
     }
 

@@ -26,7 +26,7 @@
                             <td scope="row"class = "text-sm font-medium text-gray-900 px-6 py-4 text-left">{{$user->name}}</td>
                             <td scope="row" class = "text-sm font-medium text-gray-900 px-6 py-4 text-left">{{$user->email}}</td>
                             <td scope="row" class = "text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                <a href = "{{url('/')}}"class="btn btn-primary">Edit</a>
+                                <a href = "{{url('/announcement')}}"class="btn btn-primary">Edit</a>
                             </td>
                             <td scope="row" class = "text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                 <a href = "{{url('/')}}"class="btn btn-primary">Delete</a>

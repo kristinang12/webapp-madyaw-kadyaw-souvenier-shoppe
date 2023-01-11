@@ -1,13 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
-use App\Models\Announcement;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
-use App\Http\Requests\AnnouncementRequest;
 
-class AdminController extends Controller
+use Illuminate\Http\Request;
+
+class AnnouncementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,24 +13,18 @@ class AdminController extends Controller
      */
     public function index()
     {
-        
-        return view('admin.index');
+        //
     }
-    public function list()
-    {
-        
-        $users = User::all();
-        return view('admin.list', compact('users'));
-    }
-
-    
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    
+    public function announcement()
+    {
+        return view('announcement');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -41,21 +32,9 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AnnouncementRequest $request)
+    public function store(Request $request)
     {
-        $data = $request->validated();
-
-        $announcement = Announcement::announcement([
-                
-                'header'=>$data['header'],
-                'sub_header'=>$data['sub_header'],
-                'user_id'=>$data['user_id'],
-                'description'=>$data['description'],
-                'photo'=>$data['photo'],
-
-        ]);
-        return redirect('announcement')->with('message', 'Announcement Added Success');
-
+        //
     }
 
     /**
@@ -66,7 +45,7 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        
+        //
     }
 
     /**
